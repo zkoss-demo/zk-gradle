@@ -5,18 +5,7 @@ import org.zkoss.bind.annotation.NotifyChange;
 
 public class MyViewModel {
 	public static final String SUBMIT_COMMAND = "submit";
-	private String name;
-	private String response;
-
-	@Command(SUBMIT_COMMAND)
-	@NotifyChange("response")
-	public void submit() {
-		response = String.format("Hello %s!", name);
-	}
-
-	public String getResponse() {
-		return response;
-	}
+	private String name = "";
 
 	public String getName() {
 		return name;
@@ -24,5 +13,14 @@ public class MyViewModel {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getResponse() {
+		return String.format("Hello %s!", name);
+	}
+
+	@Command(SUBMIT_COMMAND)
+	@NotifyChange("response")
+	public void submit() {
 	}
 }

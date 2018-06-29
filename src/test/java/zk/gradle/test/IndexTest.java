@@ -33,7 +33,7 @@ public class IndexTest {
 		ComponentAgent responseLabel = desktopAgent.query("#response");
 
 		Assert.assertEquals("", nameInput.as(Textbox.class).getValue());
-		nameInput.as(InputAgent.class).input("Tester");
+		nameInput.input("Tester");
 		submitButton.click();
 
 		Assert.assertEquals("Hello Tester!", responseLabel.as(Label.class).getValue());
