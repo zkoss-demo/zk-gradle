@@ -23,6 +23,7 @@ repositories {
 //	}
 	maven { url "http://mavensync.zkoss.org/maven2" }
 	maven { url "http://mavensync.zkoss.org/eval" }
+    maven { url "http://jaspersoft.jfrog.io/jaspersoft/third-party-ce-artifacts/" } //for jasper reports
 	mavenCentral()
 }
 
