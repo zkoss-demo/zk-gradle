@@ -3,9 +3,9 @@ apply plugin: 'war'
 //gretty
 buildscript {
 	repositories { jcenter() }
-	dependencies { classpath 'org.akhikhl.gretty:gretty:+' }
+	dependencies { classpath 'org.gretty:gretty:+' }
 }
-apply plugin: 'org.akhikhl.gretty'
+apply plugin: 'org.gretty'
 gretty {
 	servletContainer = 'jetty9.4' //jetty7, jetty8, jetty9, jetty9.3, jetty9.4
 	httpsEnabled = true
@@ -25,6 +25,7 @@ repositories {
 	maven { url "http://mavensync.zkoss.org/eval" }
     maven { url "http://jaspersoft.jfrog.io/jaspersoft/third-party-ce-artifacts/" } //for jasper reports
 	mavenCentral()
+	jcenter() //for gretty
 }
 
 sourceCompatibility = '1.8'
