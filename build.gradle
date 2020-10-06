@@ -9,9 +9,9 @@ repositories {
 //	}
 //		url "https://maven.zkoss.org/repo/zk/ee" //ZK-EE repo requires login
 //	}
-	maven { url "http://mavensync.zkoss.org/maven2" }
-	maven { url "http://mavensync.zkoss.org/eval" }
-    maven { url "http://jaspersoft.jfrog.io/jaspersoft/third-party-ce-artifacts/" } //for jasper reports
+	maven { url "https://mavensync.zkoss.org/maven2" }
+	maven { url "https://mavensync.zkoss.org/eval" }
+	maven { url "https://jaspersoft.jfrog.io/jaspersoft/third-party-ce-artifacts/" } //for jasper reports
 	mavenCentral()
 }
 
@@ -33,8 +33,11 @@ dependencies {
 	implementation "org.zkoss.zk:zuti:${zkVersion}"    /*optional enable for shadow elements support */
 //	implementation "org.zkoss.zk:zhtml:${zkVersion}"   /*optional enable for xhtml component support */
 //	implementation "org.zkoss.zk:zkplus:${zkVersion}"  /*optional enable for 3rd party framework integration support */
+//	implementation "org.zkoss.zk:za11y:${zkVersion}"   /*optional enable for accessibility features */
 
 	implementation "commons-io:commons-io:${commonsIoVersion}"
+
+	runtimeOnly "org.slf4j:slf4j-jdk14:1.7.28"
 
 	testImplementation "org.zkoss.zats:zats-mimic-ext7:${zatsVersion}"
 
@@ -50,6 +53,6 @@ task startJettyRunner(type: JavaExec) {
 	classpath = sourceSets.jettyRunner.runtimeClasspath
 	main 'org.eclipse.jetty.runner.Runner'
 	args '--path', "/${rootProject.name}", 'src/main/webapp'
-//  for windows in case of problems with resource file locking, while running
+//	for windows in case of problems with resource file locking, while running
 //	args '--path', "/${rootProject.name}", 'jetty-dev-context.xml'
 }
