@@ -4,7 +4,15 @@ Example ZK project using gradle
 
 ## Useful Build Commands
 
-run jetty (with jetty-runner)
+run jetty (using gretty)
+```
+./gradlew appRun
+```
+run tomcat (using gretty)
+```
+./gradlew tomcatRun
+```
+run jetty (with jetty-runner - faster startup)
 ```
 ./gradlew startJettyRunner
 ```
