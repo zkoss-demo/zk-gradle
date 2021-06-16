@@ -16,8 +16,8 @@ repositories {
 	mavenCentral()
 }
 
-sourceCompatibility = '1.8'
-targetCompatibility = '1.8'
+sourceCompatibility = '11'
+targetCompatibility = '11'
 
 sourceSets {
 	jettyRunner {
@@ -37,23 +37,20 @@ dependencies {
 //	implementation "org.zkoss.zk:za11y:${zkVersion}"   /*optional enable for accessibility features */
 
 	implementation "commons-io:commons-io:${commonsIoVersion}"
-
 	runtimeOnly "org.slf4j:slf4j-jdk14:1.7.28"
 
 	testImplementation "org.zkoss.zats:zats-mimic-ext7:${zatsVersion}"
-
 	testImplementation "junit:junit:${junitVersion}"
 
 	jettyRunnerRuntimeOnly "org.eclipse.jetty:jetty-runner:${jettyVersion}"
-	jettyRunnerRuntimeOnly "javax.websocket:javax.websocket-api:${websocketApiVersion}"
-	jettyRunnerRuntimeOnly "org.eclipse.jetty.websocket:javax-websocket-server-impl:${jettyVersion}"
+	jettyRunnerRuntimeOnly "org.eclipse.jetty.websocket:websocket-javax-server:${jettyVersion}"
 }
 
 //launch Jetty using jetty-runner
 task startJettyRunner(type: JavaExec) {
 	classpath = sourceSets.jettyRunner.runtimeClasspath
-	main 'org.eclipse.jetty.runner.Runner'
+	mainClass = 'org.eclipse.jetty.runner.Runner'
 	args '--path', "/${rootProject.name}", 'src/main/webapp'
-//	for windows in case of problems with resource file locking, while running
+//	to enable websockets
 //	args '--path', "/${rootProject.name}", 'jetty-dev-context.xml'
 }
