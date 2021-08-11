@@ -7,10 +7,10 @@
 		<listener-class>org.zkoss.zkmax.au.websocket.WebSocketWebAppInit</listener-class>
 	</listener>
 
-<!--
+	<!--
 	add your zk configuration such as client/session config, listeners, library-properties, debug configuration ...
 	see: https://www.zkoss.org/wiki/ZK_Configuration_Reference/zk.xml
--->
+	-->
 
 	<!--some common/useful development/debugging options below-->
 

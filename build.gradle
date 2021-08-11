@@ -39,7 +39,7 @@ dependencies {
 	implementation "commons-io:commons-io:${commonsIoVersion}"
 	runtimeOnly "org.slf4j:slf4j-jdk14:1.7.28"
 
-	testImplementation "org.zkoss.zats:zats-mimic-ext7:${zatsVersion}"
+	testImplementation "org.zkoss.zats:zats-mimic-ext96:${zatsVersion}"
 	testImplementation "junit:junit:${junitVersion}"
 
 	jettyRunnerRuntimeOnly "org.eclipse.jetty:jetty-runner:${jettyVersion}"
@@ -50,7 +50,7 @@ dependencies {
 task startJettyRunner(type: JavaExec) {
 	classpath = sourceSets.jettyRunner.runtimeClasspath
 	mainClass = 'org.eclipse.jetty.runner.Runner'
-	args '--path', "/${rootProject.name}", 'src/main/webapp'
+//	args '--path', "/${rootProject.name}", 'src/main/webapp'
 //	to enable websockets
-//	args '--path', "/${rootProject.name}", 'jetty-dev-context.xml'
+	args '--path', "/${rootProject.name}", 'jetty-dev-context.xml'
 }

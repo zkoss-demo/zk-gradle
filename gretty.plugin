@@ -1,6 +1,6 @@
 buildscript {
   repositories {
-    jcenter()
+    mavenCentral()
   }
 
   dependencies {
@@ -9,7 +9,7 @@ buildscript {
 }
 
 repositories {
-  jcenter()
+  mavenCentral()
 }
 
 if (!project.plugins.findPlugin(org.akhikhl.gretty.GrettyPlugin))
