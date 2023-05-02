@@ -1,5 +1,7 @@
-apply plugin: 'war'
-apply from: 'gretty.plugin'
+plugins {
+	id "org.gretty" version "3.1.1"
+	id "war"
+}
 
 // In this section you declare where to find the dependencies of your project
 repositories {
