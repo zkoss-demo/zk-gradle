@@ -30,3 +30,6 @@ build war
 
 ## License
 * Demo Code - [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0)
+
+# Notice
+upgrade gradle wrapper version might fail plugin execution.
